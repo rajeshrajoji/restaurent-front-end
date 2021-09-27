@@ -1,0 +1,30 @@
+<div class="row mb-5" *ngIf="registerMenuItemForm">
+
+
+    <mat-card>
+        <mat-card-content>
+          <form [formGroup]="registerMenuItemForm" (ngSubmit)="register(registerMenuItemForm)">
+            <h2>Add Menu Item</h2>
+            <mat-error *ngIf="errorMessage">
+                {{errorMessage}}
+            </mat-error>
+            <mat-form-field class="full-width-input">
+              <input matInput placeholder="Item Name"  formControlName="name" required>
+            </mat-form-field>
+            <mat-form-field class="full-width-input">
+              <input matInput type="text" placeholder="Item Type"  formControlName="type" required>
+            </mat-form-field>
+            <mat-form-field class="full-width-input">
+                <input matInput type="text" placeholder="Item Price"  formControlName="price" required>
+              </mat-form-field>
+            <button mat-raised-button color="primary">Register Menu Item</button>
+          </form>
+        </mat-card-content>
+        <div class="alert alert-danger" role="alert" *ngIf="errorMessage">{{errorMessage}}</div>
+        <div class="alert alert-danger" role="alert" *ngIf="successMessage">{{successMessage}}</div>
+      </mat-card>
+
+
+
+  </div>
+  

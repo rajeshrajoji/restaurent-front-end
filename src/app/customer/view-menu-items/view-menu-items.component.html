@@ -1,0 +1,31 @@
+<mat-tab-group #allTabs>
+    <mat-tab label="Main"  *ngIf="menuItems.length>0">
+        
+        <mat-card *ngFor="let item of menuItems">
+            <mat-card-header>
+               
+            </mat-card-header>
+                <div mat-card-avatar class="example-header-image"></div>
+                <mat-card-title>{{item.name}}</mat-card-title>
+                <mat-card-subtitle>{{item.type}}</mat-card-subtitle>
+                <mat-card-title>{{item.price}} $</mat-card-title>
+        
+            <mat-card-actions>
+
+                <!-- <form class="itemsForm" [formGroup]="itemsForm" >
+                    <mat-form-field class="example-full-width">
+                      <mat-label>Favorite food</mat-label>
+                      <input matInput placeholder="Enter Quantity" formControlName="{{item.id}}">
+                    </mat-form-field>
+                </form>     -->
+                <button mat-button (click)="addToCart(item)">Add To Cart</button>
+            </mat-card-actions>
+
+        </mat-card>
+        
+
+    </mat-tab>
+    <mat-tab label="Tab 2">Desserts</mat-tab>
+    <mat-tab label="Tab 3">Drinks</mat-tab>
+  </mat-tab-group>
+  

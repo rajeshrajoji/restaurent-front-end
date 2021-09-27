@@ -1,0 +1,88 @@
+<div>
+  <div>
+    <mat-toolbar color="primary">
+      <mat-toolbar-row>
+        <div fxFlex="25%">
+          <button mat-raised-button color="primary">
+            <b>Home</b>
+          </button>
+        </div>
+        <div fxFlex="25%">
+          <button mat-button>
+            <!-- <mat-icon svgIcon="navigation:ic_menu_24px"></mat-icon> -->
+          </button>
+        </div>
+
+        <div fxFlex="25%" *ngIf="!isAdmin">
+          <button mat-raised-button color="primary" (click)="menu()">
+            <b>Menu</b>
+          </button>
+        </div>
+        <div fxFlex="25%" *ngIf="!isUserLoggedIn">
+          <button mat-raised-button color="primary" (click)="register()">
+            <b>Register Customer</b>
+          </button>
+        </div>
+
+        <div fxFlex="25%" *ngIf="!isUserLoggedIn">
+          <button mat-raised-button color="primary" (click)="login()">
+            <b>Login Customer</b>
+          </button>
+        </div>
+
+
+        <div fxFlex="25%" *ngIf="!isUserLoggedIn">
+          <button mat-raised-button color="primary" (click)="registerAdmin()">
+            <b>Register Admin</b>
+          </button>
+        </div>
+
+        <div fxFlex="25%" *ngIf="!isUserLoggedIn">
+          <button mat-raised-button color="primary" (click)="loginAdmin()">
+            <b>Login Admin</b>
+          </button>
+        </div>
+
+
+
+
+
+        <div fxFlex="25%" *ngIf="!isAdmin">
+          <button mat-raised-button color="primary" (click)="cartItems()">
+            <b>Cart Items</b>
+          </button>
+        </div>
+
+
+
+
+
+        <div fxFlex="25%" *ngIf="isAdmin">
+          <button mat-raised-button color="primary" (click)="addMenuItems()">
+            <b>Add Menu Items</b>
+          </button>
+        </div>
+
+
+        <div fxFlex="25%"  *ngIf="isAdmin">
+          <button mat-raised-button color="primary" (click)="editMenuItems()">
+            <b>Edit Menu Items</b>
+          </button>
+        </div>
+
+        <div fxFlex="25%"  *ngIf="isAdmin">
+          <button mat-raised-button color="primary" (click)="viewMenuItems()">
+            <b>View Menu Items</b>
+          </button>
+        </div>
+
+      </mat-toolbar-row>
+    </mat-toolbar>
+
+    <main class="main-content container">
+      <router-outlet></router-outlet>
+    </main>
+  </div>
+
+
+</div>
